@@ -1,0 +1,2 @@
+import assert from 'node:assert/strict';import {COLS,ROWS,rotate,collides,clearLines,scoreFor,newPiece,emptyBoard} from '../src/game-core.js';
+assert.equal(COLS,10);assert.equal(ROWS,20);assert.deepEqual(rotate([[1,0],[1,1]]),[[1,1],[1,0]]);let b=emptyBoard();b[19]=Array(COLS).fill({color:'#fff'});const r=clearLines(b);assert.equal(r.count,1);assert.equal(r.board.length,20);assert.equal(scoreFor(4,2,0),1600);assert.equal(collides(b,newPiece('I')),false);console.log('game-core tests passed');

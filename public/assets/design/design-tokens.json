@@ -1,0 +1,33 @@
+{
+  "name": "DE-TETRIS",
+  "tagline": "Stack data. Build solutions. Clear tomorrow.",
+  "colors": {
+    "background": "#071426",
+    "panel": "#0B1830",
+    "cyan": "#27D8FF",
+    "purple": "#A855F7",
+    "red": "#FF4B4B",
+    "orange": "#FF8A24",
+    "green": "#6BEA4A",
+    "blue": "#3B82F6",
+    "white": "#F5F7FB"
+  },
+  "fonts": {
+    "display": "Orbitron, system-ui, sans-serif",
+    "body": "Inter, system-ui, sans-serif"
+  },
+  "tile_size": 32,
+  "recommended_board": {
+    "columns": 10,
+    "rows": 20
+  },
+  "logos": [
+    "databricks",
+    "adf",
+    "vscode",
+    "sqlserver",
+    "azure",
+    "database",
+    "team"
+  ]
+}

@@ -1,0 +1,1 @@
+{"name":"de-tetris","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"vite","build":"vite build","check":"npm run build && node --check src/game-core.js && node --check src/main.js","test":"node tests/game-core.test.js","deploy":"npm run build && npx wrangler deploy"},"devDependencies":{"vite":"^6.1.0","wrangler":"^4.134.0"}}

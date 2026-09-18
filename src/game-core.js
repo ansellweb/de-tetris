@@ -1,0 +1,11 @@
+export const COLS=10, ROWS=20;
+export const PIECES={I:{color:'#27d8ff',shape:[[1,1,1,1]],icon:'azure'},O:{color:'#ffdb4d',shape:[[1,1],[1,1]],icon:'database'},T:{color:'#a855f7',shape:[[0,1,0],[1,1,1]],icon:'team'},S:{color:'#6bea4a',shape:[[0,1,1],[1,1,0]],icon:'adf'},Z:{color:'#ff4b4b',shape:[[1,1,0],[0,1,1]],icon:'sqlserver'},J:{color:'#3b82f6',shape:[[1,0,0],[1,1,1]],icon:'vscode'},L:{color:'#ff8a24',shape:[[0,0,1],[1,1,1]],icon:'databricks'}};
+export const TYPES=Object.keys(PIECES);
+export const rotate=(m,dir=1)=>{const h=m.length,w=m[0].length;const out=Array.from({length:w},()=>Array(h).fill(0));for(let y=0;y<h;y++)for(let x=0;x<w;x++)out[dir>0?x:h-1-y][dir>0?h-1-y:x]=m[y][x];return out};
+export const makeBag=()=>[...TYPES].sort(()=>Math.random()-.5);
+export const collides=(board,p)=>p.shape.some((r,y)=>r.some((v,x)=>v&&(p.x+x<0||p.x+x>=COLS||p.y+y>=ROWS||(p.y+y>=0&&board[p.y+y][p.x+x]))));
+export const merge=(board,p)=>{const b=board.map(r=>r.slice());p.shape.forEach((r,y)=>r.forEach((v,x)=>{if(v&&p.y+y>=0)b[p.y+y][p.x+x]={type:p.type,color:p.color,icon:p.icon}}));return b};
+export const clearLines=board=>{const kept=board.filter(r=>r.some(v=>!v));const count=ROWS-kept.length;return {board:[...Array.from({length:count},()=>Array(COLS).fill(0)),...kept],count}};
+export const scoreFor=(lines,level,combo)=>lines?([0,100,300,500,800][lines]*level)+Math.max(0,combo)*50*level:0;
+export const newPiece=(type,shape=PIECES[type].shape)=>({type,shape:shape.map(r=>r.slice()),x:Math.floor((COLS-shape[0].length)/2),y:-1,...PIECES[type]});
+export const emptyBoard=()=>Array.from({length:ROWS},()=>Array(COLS).fill(0));

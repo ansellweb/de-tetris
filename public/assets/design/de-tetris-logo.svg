@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180">
+<defs>
+  <linearGradient id="g" x1="0" x2="1"><stop stop-color="#27D8FF"/><stop offset=".32" stop-color="#A855F7"/><stop offset=".64" stop-color="#FF8A24"/><stop offset="1" stop-color="#6BEA4A"/></linearGradient>
+</defs>
+<rect width="760" height="180" rx="24" fill="#071426"/>
+<text x="38" y="112" font-family="Arial Black, Impact, sans-serif" font-size="92" font-weight="900" fill="white">DE-</text>
+<text x="205" y="112" font-family="Arial Black, Impact, sans-serif" font-size="92" font-weight="900" fill="url(#g)">TETRIS</text>
+<text x="42" y="150" font-family="Arial, sans-serif" font-size="22" letter-spacing="5" fill="#48E5FF">STACK DATA • BUILD SOLUTIONS • CLEAR TOMORROW</text>
+</svg>
